@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Habillage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        background: #ffffff;
+        overflow: hidden;
+      }
+
+      /* Wrapper global centré */
+      .wrapper {
+        width: 100%;
+        max-width: 1800px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        position: relative;
+        font-family: "Kanit", sans-serif;
+      }
+
+      .background-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+
+      /* ------------------- COLONNES ------------------- */
+
+      .TPLG-mid {
+        position: relative;
+        flex: 0 0 1086px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 220px;
+        z-index: 2;
+      }
+
+      .TPLG-left,
+      .TPLG-right {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 357px;
+        box-sizing: border-box;
+        max-height: 768px;
+      }
+
+      .TPLG-left {
+        align-items: flex-end;
+      }
+
+      .TPLG-right {
+        align-items: flex-start;
+      }
+
+      /*-------- Conteneur text ---------*/
+      .TPLG-text-container {
+        padding-top: 5px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 142px;
+        height: 768px;
+        background-color: transparent;
+      }
+
+      .TPLG-right .TPLG-text-container {
+        justify-content: center;
+        padding-bottom: 50px;
+        box-sizing: border-box;
+        gap: 10px;
+      }
+
+      .TPLG-right .TPLG-text-container .TPLG-Icons-container {
+        height: fit-content;
+      }
+
+      /* ---------------------- MID ---------------------- */
+      /* ------------------- LOGO TPLG ------------------- */
+
+      .TPLG-logo-container {
+        width: 100%;
+        height: 180px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      /* -------------------  Carousel Text --------------- */
+      .TPLG-text-carousel-container {
+        width: 60%;
+        padding: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+      }
+
+      .TPLG-text-carousel {
+        position: relative;
+        padding: 20px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: flex-start;
+      }
+
+      .TPLG-text-carousel2 {
+        height: 50px;
+        position: relative;
+        padding: 20px;
+        box-sizing: border-box;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .TPLG-text-carousel-container p {
+        background-color: rgb(255, 255, 255);
+        font-size: 30px;
+        font-weight: 700;
+        position: absolute;
+        text-transform: uppercase;
+        opacity: 0;
+        margin: 0;
+        padding: 5px 8px;
+      }
+
+      .TPLG-text-carousel .animation-left {
+        border-radius: 10px 0 0 0;
+        border-top: solid 2px #000000;
+        border-left: solid 4px #000000;
+        color: #000000;
+        animation: rotateText 16s infinite;
+      }
+
+      .TPLG-text-carousel2 .animation-right {
+        color: #e30713;
+        border-radius: 0 0 10px 0;
+        animation: rotateText2 16s infinite;
+        border-right: solid 4px #e30713;
+        border-bottom: solid 1px #e30713;
+      }
+
+      .TPLG-text-carousel p:nth-child(1),
+      .TPLG-text-carousel2 p:nth-child(1) {
+        animation-delay: 0s;
+      }
+
+      .TPLG-text-carousel p:nth-child(2),
+      .TPLG-text-carousel2 p:nth-child(2) {
+        animation-delay: 4s;
+      }
+      .TPLG-text-carousel p:nth-child(3),
+      .TPLG-text-carousel2 p:nth-child(3) {
+        animation-delay: 8s;
+      }
+      .TPLG-text-carousel p:nth-child(4),
+      .TPLG-text-carousel2 p:nth-child(4) {
+        animation-delay: 12s;
+      }
+
+      @keyframes rotateText {
+        0% {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        5% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        25% {
+          opacity: 1;
+        }
+        30% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes rotateText2 {
+        0% {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        5% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+        25% {
+          opacity: 1;
+        }
+        30% {
+          opacity: 0;
+          transform: translateX(20px);
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+
+      /* ----------------  Icons  ------------------- */
+
+      .TPLG-logo-container,
+      .TPLG-text-carousel {
+        position: relative;
+        overflow: visible;
+        z-index: 1;
+      }
+
+      .TPLG-LOGO {
+        width: 300px;
+        position: absolute;
+        top: 20px;
+      }
+
+      .TPLG-Icons-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        gap: 10px;
+      }
+
+      .TPLG-left .TPLG-Icons-container {
+        justify-content: center;
+      }
+
+      .TPLG-bulle-icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        width: 60%;
+        aspect-ratio: 1 / 1;
+        background-color: #ffffff;
+        border: solid 3px #e30713;
+      }
+
+      .TPLG-bulle-icon-container img {
+        width: 100%;
+      }
+
+      .TPLG-Icons-container a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        z-index: 3;
+      }
+
+      .TPLG-Icons-container p {
+        margin: 0 0 8px 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        background-color: #e30713;
+        padding: 5px;
+        border-radius: 50px;
+      }
+
+      @media (max-width: 1024px) {
+        .white-rectangle {
+          clip-path: polygon(660px 0px, 1240px 0px, 850px 1000px, 260px 1000px);
+        }
+
+        .TPLG-left,
+        .TPLG-right {
+          flex: 0 0 272px;
+        }
+
+        .TPLG-text-container {
+          display: none;
+        }
+
+        .TPLG-logo-container {
+          height: auto;
+          padding: 8px;
+        }
+
+        .TPLG-mid {
+          flex: 0 0 480px;
+          height: 250px;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+        }
+
+        .TPLG-text-carousel {
+          height: auto;
+          justify-content: center;
+          padding: 10px;
+        }
+
+        .TPLG-text-carousel-container {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          align-items: center;
+        }
+
+        .TPLG-text-carousel-container p {
+          font-size: 18px;
+        }
+
+        .TPLG-Icons-container {
+          display: none;
+        }
+      }
+
+      .TPLG-global-link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+      }
+
+      .TPLG-left .TPLG-LOGO {
+        padding-right: 10px;
+        box-sizing: border-box;
+      }
+
+      .TPLG-devis-container {
+        background-color: #e30713;
+        width: 100%;
+        height: fit-content;
+        padding: 10px 0px;
+        border-radius: 0px 25px 25px 0;
+        border: solid 3px white;
+        animation: pulse-container 2s steps(1) infinite;
+      }
+
+      @keyframes pulse-container {
+        0%,
+        49% {
+          background-color: #e30713;
+          border: solid 3px white;
+        }
+
+        50%,
+        100% {
+          background-color: rgb(255, 255, 255);
+          border: solid 3px #e30713;
+        }
+      }
+
+      .TPLG-devis-container p {
+        font-size: 20px;
+        width: 100%;
+        color: white;
+        margin: 0;
+        text-align: center;
+        line-height: 15pt;
+        font-weight: 400;
+        animation: pulse-text 2s steps(1) infinite;
+      }
+
+      @keyframes pulse-text {
+        0%,
+        49% {
+          color: white;
+        }
+
+        50%,
+        100% {
+          color: #e30713;
+        }
+      }
+
+      .carrousel-and-video {
+        margin-left: 180px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .video-container {
+        height: 100%;
+        width: 45%;
+      }
+
+      .video-container video {
+        border-left: solid 3px #e30713;
+        border-right: solid 3px #e30713;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <img
+        src="https://raw.githubusercontent.com/bttTPLG/img/refs/heads/main/asset/new-fond-1800x1000.png"
+        alt="Cellules"
+        class="background-image"
+      />
+      <a
+        href="https://www.toutpourlegrain.fr/fr/"
+        target="_blank"
+        class="TPLG-global-link"
+      ></a>
+      <!-- Gauche -->
+      <section class="TPLG-left">
+        <div class="TPLG-text-container">
+          <div class="TPLG-logo-container">
+            <img
+              src="https://www.toutpourlegrain.fr/images/Logo-TPLG.svg"
+              alt="Logo Tout Pour Le Grain"
+              class="TPLG-LOGO"
+            />
+          </div>
+          <!-- Icons -->
+          <div class="TPLG-Icons-container">
+            <div class="TPLG-bulle-icon-container">
+              <img
+                src="https://raw.githubusercontent.com/bttTPLG/img/refs/heads/main/asset/Stockage.png"
+                alt="Icon Stockage"
+              />
+            </div>
+            <p>Stockage</p>
+            <div class="TPLG-bulle-icon-container">
+              <img
+                src="https://raw.githubusercontent.com/bttTPLG/img/refs/heads/main/asset/Manutention.png"
+                alt="Icon Manutention"
+              />
+            </div>
+            <p>Manutention</p>
+            <div class="TPLG-bulle-icon-container">
+              <img
+                src="https://raw.githubusercontent.com/bttTPLG/img/refs/heads/main/asset/Nettoyage.png"
+                alt="Icon Nettoyage"
+              />
+            </div>
+            <p>Nettoyage</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Milieu -->
+      <section class="TPLG-mid">
+        <!-- Carousel text -->
+        <div class="carrousel-and-video">
+          <div class="TPLG-text-carousel-container">
+            <div class="TPLG-text-carousel">
+              <p class="animation-left">Stockez vos récoltes</p>
+              <p class="animation-left">Expertise technique</p>
+              <p class="animation-left">Votre projet de stockage</p>
+              <p class="animation-left">étude gratuite</p>
+            </div>
+            <div class="TPLG-text-carousel2">
+              <p class="animation-right">à moindre coût</p>
+              <p class="animation-right">depuis plus de 65 ans</p>
+              <p class="animation-right">sur-mesure</p>
+              <p class="animation-right">et personnalisée</p>
+            </div>
+          </div>
+          <div class="video-container">
+            <video class="background-video" autoplay muted loop playsinline>
+              <source
+                src="https://raw.githubusercontent.com/bttTPLG/img/refs/heads/main/asset/video-drone.mp4"
+                type="video/mp4"
+              />
+              Votre navigateur ne prend pas en charge la lecture vidéo.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- Droite -->
+      <section class="TPLG-right">
+        <div class="TPLG-text-container">
+          <div class="TPLG-Icons-container">
+            <div class="TPLG-bulle-icon-container">
+              <img
+                src="https://raw.githubusercontent.com/bttTPLG/img/refs/heads/main/asset/S%C3%A9chage.png"
+                alt="Icon Séchage"
+              />
+            </div>
+            <p>Séchage</p>
+            <div class="TPLG-bulle-icon-container">
+              <img
+                src="https://raw.githubusercontent.com/bttTPLG/img/refs/heads/main/asset/Ventilation.png"
+                alt="Icon Ventilation"
+              />
+            </div>
+            <p>Ventilation</p>
+            <div class="TPLG-bulle-icon-container">
+              <img
+                src="https://raw.githubusercontent.com/bttTPLG/img/refs/heads/main/asset/Automatisation.png"
+                alt="Icon Ventilation"
+              />
+            </div>
+            <p>Automatisation</p>
+          </div>
+          <div class="TPLG-devis-container">
+            <p>Devis gratuit</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
